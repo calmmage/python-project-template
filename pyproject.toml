@@ -22,6 +22,7 @@ jupyter = ">=1.0.0"
 tqdm = "*"
 # pandas = "2.1.0"
 black = "*"
+pre-commit = "*"
 
 [build-system]
 requires = ["poetry-core"]

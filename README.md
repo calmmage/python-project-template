@@ -1,5 +1,11 @@
 # python-project-template
 
+## setup
+
+```shell
+pre-commit install
+```
+
 ## More libs to use if you want
 
 ```toml
