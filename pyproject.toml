@@ -1,8 +1,6 @@
 [tool.poetry]
 name = "project-name"
 version = "0.0.1"
-# Template Version: 0.2.4 # update python version because of langchain
-# Add scheduled job example
 description = ""
 authors = ["Petr Lavrov <calmmage@gmail.com>"]
 readme = "README.md"
@@ -20,6 +18,8 @@ toml = "*"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = ">=1.0.0"
+jupyter-nbextensions-configurator = "*"
+jupyter_contrib_nbextensions = "*"
 tqdm = "*"
 # pandas = "2.1.0"
 black = "*"
@@ -28,3 +28,9 @@ pre-commit = "*"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[template]
+version = "0.2.4"  # update python version because of langchain
+url = "https://github.com/calmmage/python-project-template.git"
+author = "Petr Lavrov <petrlavrov@calmmage.com>"
+description = "A template for creating a bot using calmapp and bot-lib"
