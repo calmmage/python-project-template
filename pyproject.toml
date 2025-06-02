@@ -2,8 +2,12 @@
 name = "project-name"
 version = "0.0.1"
 description = ""
-authors = ["Petr Lavrov <calmmage@gmail.com>"]
+authors = ["Petr Lavrov <me@petrlavrov.com>"]
 readme = "README.md"
+packages=[
+    { include = "src", from = "." },
+]
+
 
 [tool.poetry.dependencies]
 python = ">=3.11,<4.0"
@@ -73,6 +77,13 @@ python-dotenv = "*"
 [tool.poetry.group.test.dependencies]
 pytest = ">=6"
 #pytest-mongodb = "*"
+vulture = "^2.14"
+pytest-cov = "^6.1.1"
+pytest-asyncio = "^1.0.0"
+pytest-mock = "^3.14.1"
+pyupgrade = "^3.20.0"
+pyright = "^1.1.401"
+ruff = "^0.11.12"
 
 [tool.poetry.group.docs.dependencies]
 #mkdocs = ">=1.6"
@@ -93,12 +104,72 @@ tqdm = "*"                   # Progress bars
 #matplotlib = "*"            # Plotting library
 #numpy = "*"                 # Numerical computing
 
+
+[tool.pdm.dev-dependencies]
+extras = []
+test = [
+    "pytest>=6",
+    "vulture<3.0,>=2.14",
+    "pytest-cov<7.0.0,>=6.1.1",
+    "pytest-asyncio<2.0.0,>=1.0.0",
+    "pytest-mock<4.0.0,>=3.14.1",
+    "pyupgrade<4.0.0,>=3.20.0",
+    "pyright<2.0.0,>=1.1.401",
+    "ruff<1.0.0,>=0.11.12",
+]
+docs = []
+dev = [
+    "jupyter>=1.0.0",
+    "black>=24.0.0",
+    "pre-commit>=3.8.0",
+    "tqdm",
+]
+
+[tool.pdm.build]
+includes = [
+    "src",
+]
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [template]
-version = "0.3.0"  # optimize pyproject dependencies
+version = "0.4.0"  # optimize pyproject dependencies
 url = "https://github.com/calmmage/python-project-template.git"
-author = "Petr Lavrov <petrlavrov@calmmage.com>"
+author = "Petr Lavrov <me@petrlavrov.com>"
 description = "A template for creating a bot using calmapp and bot-lib"
+[project]
+authors = [
+    {name = "Petr Lavrov", email = "me@petrlavrov.com"},
+]
+requires-python = "<4.0,>=3.11"
+dependencies = [
+    "calmlib @ git+https://github.com/calmmage/calmlib.git@main",
+    "loguru>=0.7",
+    "toml>=0.10",
+    "python-dotenv",
+]
+name = "project-name"
+version = "0.0.1"
+description = ""
+readme = "README.md"
+
+[dependency-groups]
+extras = []
+test = [
+    "pytest>=6",
+    "vulture<3.0,>=2.14",
+    "pytest-cov<7.0.0,>=6.1.1",
+    "pytest-asyncio<2.0.0,>=1.0.0",
+    "pytest-mock<4.0.0,>=3.14.1",
+    "pyupgrade<4.0.0,>=3.20.0",
+    "pyright<2.0.0,>=1.1.401",
+    "ruff<1.0.0,>=0.11.12",
+]
+docs = []
+dev = [
+    "jupyter>=1.0.0",
+    "black>=24.0.0",
+    "pre-commit>=3.8.0",
+    "tqdm",
+]
