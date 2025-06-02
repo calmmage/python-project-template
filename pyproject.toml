@@ -13,10 +13,6 @@ dependencies = [
     "toml>=0.10",
     "python-dotenv",
 ]
-name = "project-name"
-version = "0.0.1"
-description = ""
-readme = "README.md"
 
 [build-system]
 requires = ["hatchling"]
@@ -116,7 +112,7 @@ dev = [
 ]
 
 [template]
-version = "1.0.0"  # optimize pyproject dependencies
+version = "1.0.1"  # optimize pyproject dependencies
 url = "https://github.com/calmmage/python-project-template.git"
 author = "Petr Lavrov <me@petrlavrov.com>"
 description = "A template for creating a bot using calmapp and bot-lib"
