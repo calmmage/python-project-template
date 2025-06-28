@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     {name = "Petr Lavrov", email = "me@petrlavrov.com"},
 ]
-requires-python = "<4.0,>=3.11"
+requires-python = "<4.0,>=3.12"
 dependencies = [
     "calmlib @ git+https://github.com/calmmage/calmlib.git@main",
     "loguru>=0.7",
@@ -112,7 +112,7 @@ dev = [
 ]
 
 [template]
-version = "1.0.1"  # optimize pyproject dependencies
+version = "1.0.2"  # optimize pyproject dependencies
 url = "https://github.com/calmmage/python-project-template.git"
 author = "Petr Lavrov <me@petrlavrov.com>"
 description = "A template for creating a bot using calmapp and bot-lib"
